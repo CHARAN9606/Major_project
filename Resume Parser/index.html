@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Parser | AI-Powered CV Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="glass-container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1><span class="gradient-text">Resume</span> Parser</h1>
+                <p class="subtitle">Extract key information from resumes in seconds using AI-powered analysis</p>
+            </div>
+            <div class="hero-illustration">
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-card">
+                <div class="upload-area" id="drop-zone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Upload Your Resume</h3>
+                    <p>Drag & drop your PDF or DOCX file here, or click to browse</p>
+                    <input type="file" id="resume-upload" accept=".pdf,.docx">
+                    <label for="resume-upload" class="browse-btn">Browse Files</label>
+                </div>
+                <div class="file-info" id="file-info">
+                    <i class="fas fa-file-alt"></i>
+                    <span>No file selected</span>
+                </div>
+                <button id="parse-btn" class="primary-btn" disabled>
+                    <span class="btn-content">
+                        <i class="fas fa-magic"></i>
+                        Parse Resume
+                    </span>
+                    <span class="loading-dots hidden">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <div class="result-header">
+                    <h2>Parsed Resume Information</h2>
+                    <button class="secondary-btn" id="download-btn">
+                        <i class="fas fa-download"></i> Export as JSON
+                    </button>
+                </div>
+                
+                <div class="result-grid">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-user"></i>
+                            <h3>Personal Information</h3>
+                        </div>
+                        <div id="personal-info" class="card-content"></div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Skills</h3>
+                        </div>
+                        <div id="skills" class="card-content skills-grid"></div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Education</h3>
+                        </div>
+                        <div id="education" class="card-content timeline"></div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Experience</h3>
+                        </div>
+                        <div id="experience" class="card-content timeline"></div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-award"></i>
+                            <h3>Certifications</h3>
+                        </div>
+                        <div id="certifications" class="card-content"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2024 Resume Parser | AI-Powered Recruitment Tool</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
